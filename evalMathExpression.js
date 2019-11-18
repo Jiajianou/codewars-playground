@@ -70,6 +70,8 @@ const calc = function (expression) {
 console.log(isNaN(" "));
 
 
-console.log(calc('2 / (2 + 3) * 4.33 - -6--1'));
+console.log(calc('2 / (2 + 3) * 4.33 - -6'));
 
 console.log(calc('1 - - 1'));
+
+
