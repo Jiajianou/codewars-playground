@@ -40,10 +40,7 @@
 
 
 const vertMirror = (s) => s.split("\n").map(e => e.split("").reverse().join("")).join("\n");
-
-
 const horMirror = (s) => s.split("\n").reverse().join("\n");
-
 
 const oper = (f, s) => f(s);
 
