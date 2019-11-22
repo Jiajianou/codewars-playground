@@ -59,6 +59,7 @@
 
 const line = grid => {
 
+
     const look = (currentV, currentL, direction) => {
 
         try{
@@ -80,40 +81,29 @@ const line = grid => {
 
         switch(currentBlock){
 
-            case "X":
-
-                
+            case "X":           
                 if((up==="|" && direction === "up") || (up=== "+" && direction ==="up") || (up === "X" && direction==="up")) return true;
                 if((right==="-" && direction === "right") || (right==="+" && direction === "right") || (right === "X" && direction==="right"))return true;
                 if((left==="-" && direction === "left") || (left === "+" && direction === "left")|| (left === "X" && direction==="left")) return true;
-                if((down==="|" && direction === "down") || (down==="+" && direction==="down")|| (down === "X" && direction==="down")) return true;
-                
-                
+                if((down==="|" && direction === "down") || (down==="+" && direction==="down")|| (down === "X" && direction==="down")) return true;            
                 break;
 
-            case "-":
-
-                
+            case "-":          
                 if((left==="-" && direction === "left") || (left === "+" && direction==="left")|| (left === "X" && direction==="left")) return true;
                 if((right==="-" && direction === "right") || (right==="+" && direction==="right")|| (right === "X" && direction==="right")) return true;
-
                 break;
 
             case "|":
-
                 if(up==="X" || down==="X") return true;
                 if((up === "|" && direction === "up") || (up==="+" && direction === "up")|| (up === "X" && direction==="up")) return true;
                 if((down === "|" && direction === "down") || (down==="+" && direction === "down")|| (down === "X" && direction==="down")) return true;
-
                 break;
 
-            case "+":
-             
+            case "+":            
                 if((up==="|" && direction === "up") || (up=== "+" && direction ==="up")|| (up === "X" && direction==="up")) return true;
+                if((right==="-" && direction === "right") || (right==="+" && direction === "right")|| (right === "X" && direction==="right"))return true;
                 if((left==="-" && direction === "left") || (left === "+" && direction === "left")|| (left === "X" && direction==="left")) return true;
-                if((right==="-" && direction === "right") || (right==="+" && direction === "right")|| (right === "X" && direction==="right"))return true;              
-                if((down==="|" && direction === "down") || (down==="+" && direction==="down")|| (down === "X" && direction==="down")) return true; 
-                
+                if((down==="|" && direction === "down") || (down==="+" && direction==="down")|| (down === "X" && direction==="down")) return true;              
                 break;
 
             default: return false;
@@ -121,7 +111,6 @@ const line = grid => {
         
         return false;
     }
-
 
     const determine = (heading, currentBlock, up, down, left, right) => {
 
@@ -159,20 +148,30 @@ const line = grid => {
                 
             default: return "no";
         }
-
+        
         if(currentBlock==="+"){
             if(left==="+" && right==="+") shouldGo = "left";
         }
 
+        // if(currentBlock==="+"){
+
+        //     if((heading==="right"||heading==="left" )&& up==="+" && down==="+"){
+        //         shouldGo="up-down"
+        //     }
+        //     if((heading==="up" || heading==="down" ) && left==="+" && right==="+"){
+        //         shouldGo="left-right";
+        //     }
+        // }
+        
         if(currentBlock==="X"){
-            if(up==="|"&&down==="|") shouldGo = "nope";
-            if(right==="-"&&down==="|") shouldGo = "nope";
-            if(right==="-"&&down==="-") shouldGo = "nope";
-            if(right==="-"&&down==="X") shouldGo = "nope";
-            if(right==="X"&&down==="|") shouldGo = "nope";  
-            if(left==="-"&&right==="-") shouldGo = "nope";
-            if(up===""&&right===""&&down==="") shouldGo = "left";
-          }
+          if(up==="|"&&down==="|") shouldGo = "nope";
+          if(right==="-"&&down==="|") shouldGo = "nope";
+          if(right==="-"&&down==="-") shouldGo = "nope";
+          if(right==="-"&&down==="X") shouldGo = "nope";
+          if(right==="X"&&down==="|") shouldGo = "nope";  
+          if(left==="-"&&right==="-") shouldGo = "nope";
+          if(!canIGo("right",currentBlock,up,down,left,right) && !canIGo("up",currentBlock,up,down,left,right) && !canIGo("down",currentBlock,up,down,left,right)) shouldGo = "left";
+        }
 
         return shouldGo;       
     }
@@ -186,7 +185,9 @@ const line = grid => {
            
                 let v = i;
                 let l = j;
-                let heading = "right";  
+                let heading = "right";
+                let respawnV, respawnL;
+                let fork = false;  
                           
                 while(l < grid[0].length && v < grid.length){
 
@@ -198,6 +199,25 @@ const line = grid => {
 
                     if((block==="X" && v !== i) || (block==="X" && l !== j)) return true;
                     if(block==="+" && heading === determine(heading, block, up, down, left, right)) return false;
+
+                    // if(block==="+" && (determine(heading, block, up, down, left, right)==="left-right"||determine(heading, block, up, down, left, right)==="up-down")){
+                    //     console.log("Droped breadcrump");
+                    //     fork=true;
+                    //     respawnL=l;
+                    //     respawnV=v;
+                    //     heading=determine(heading, block, up, down, left, right).split("-")[0];             
+
+                    // }
+
+                    // if(block==="+"&&determine(heading, block, up, down, left, right) === heading){
+
+                    //     if(fork){
+                    //         v=respawnV;
+                    //         l=respawnL;
+                    //         fork=false;
+                    //         continue;
+                    //     }
+                    // }
 
                     if(determine(heading, block, up, down, left, right)==="right"){
                         heading= "right";
@@ -223,7 +243,6 @@ const line = grid => {
                         
                         return false;
                     }
-                   
                 }
 
             }                  
@@ -232,6 +251,16 @@ const line = grid => {
 
     return false;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -256,4 +285,20 @@ var grid5 = [
 
 //console.log(line(grid));
 console.log(line(grid5));
+
+// let grid6= `           
+// X---------X
+           
+//            `.split("\n").map(e=>e.split(""));
+
+
+// console.log(grid6.flat().join("")===grid.flat().join(""));
+// //console.log(grid.flat());
+
+// let s1 = `            
+// X+++     
+//  +++X `;
+
+
+
 
