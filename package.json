@@ -1,0 +1,23 @@
+{
+  "name": "codewars-playground",
+  "version": "1.0.0",
+  "description": "This repository houses a collection of Codewars challenges I have attempted.",
+  "main": "LZ78Compression.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiajianou/codewars-playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiajianou/codewars-playground/issues"
+  },
+  "homepage": "https://github.com/Jiajianou/codewars-playground#readme"
+}

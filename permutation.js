@@ -106,7 +106,6 @@ function permutations2(str) {
     )];
 }
 
-
 function *heapsPerms(chs, n = chs.length) {
     if (n <= 1) yield chs.slice();
     else for (let i = 0; i < n; i++) {
@@ -120,7 +119,7 @@ function swap(iterable, i, j) {
     [iterable[i], iterable[j]] = [iterable[j], iterable[i]];
 }
 
-const permutations6 = (str) => 
+const permutations7 = (str) => 
  str.length === 1 ? 
    [str] : Array.from(new Set(
     [...str].map((char, i) => 
