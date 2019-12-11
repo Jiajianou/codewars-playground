@@ -13,3 +13,23 @@ const breakChocolate = (n,m) => (n===0 || m===0 || (n+m===1)) ? 0 : (n-1) * m + 
 
 
 console.log(breakChocolate(5, 5));
+
+
+
+//cw's solution
+
+
+var breakChocolate2 = function(n, m) {
+    return (n*m === 0) ? 0 : n * m - 1;
+   };
+
+
+   var breakChocolate3 = function(n, m) {
+    if(n === 0 || m === 0) return 0
+    return n*m - 1;
+   };
+
+
+   var breakChocolat4 = function(n, m) {
+    return Math.max(0, m*n - 1);
+  };
