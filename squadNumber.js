@@ -32,3 +32,9 @@ function generateNumber(squad, n){
 
 
 console.log(generateNumber([1,2,3,4,6,9,10,11,15,29,69], 11));
+
+
+//cw's solutions
+
+
+generateNumber2=f=(a,n,m=n,i=9)=>a.includes(n)?f(a,+`${m-i}${i}`,n,--i):n<100&&n||null
