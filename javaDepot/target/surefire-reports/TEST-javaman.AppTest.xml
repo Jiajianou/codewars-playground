@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="javaman.AppTest" time="0.037" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="javaman.AppTest" time="0.052" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/surefire/surefirebooter6702118867419705094.jar /Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/surefire 2020-01-28T19-09-19_630-jvmRun1 surefire8519019299232625863tmp surefire_012578774747812308853tmp"/>
+    <property name="sun.java.command" value="/Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/surefire/surefirebooter13552850067804316788.jar /Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/surefire 2020-01-30T07-05-06_604-jvmRun1 surefire15227604395069762965tmp surefire_05066236167959651946tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/test-classes:/Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/classes:/Users/jiajianou/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/jiajianou/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/surefire/surefirebooter6702118867419705094.jar"/>
+    <property name="surefire.real.class.path" value="/Users/jiajianou/Desktop/main/projects/codewars-playground/javaDepot/target/surefire/surefirebooter13552850067804316788.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="9.0.1+11"/>
