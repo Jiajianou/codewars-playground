@@ -1,8 +1,7 @@
 package javaman;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 /**
@@ -16,6 +15,20 @@ public class AppTest
     @Test
     public void meetExpectations()
     {
-    	assertEquals(20, ArrayKMaxProduct.maxProduct(new int[]{4,3,5}, 2));
+    	assertEquals(1,1);
+    	
+    	
+    }
+    
+    @Test 
+    public void maxKArray() {
+    	
+    	assertEquals(720, ArrayKMaxProduct.maxProduct(new int[]{10,8,7,9}, 3));
+    }
+    
+    @Test
+    public void deadFishEquals() {
+    	
+    	assertArrayEquals(new int[] {8, 64, 3600}, DeadFish.parse("iiisdosodddddiso"));
     }
 }
